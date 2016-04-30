@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.4.31
-Release  : 18
+Release  : 19
 URL      : https://pypi.python.org/packages/source/p/py/py-1.4.31.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/py/py-1.4.31.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
