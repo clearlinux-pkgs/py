@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.4.32
-Release  : 24
+Release  : 25
 URL      : https://pypi.python.org/packages/93/bd/8a90834a287e0c1682eab8e20ada672e4f4cf7d5b99f2833ddbf31ed1a6d/py-1.4.32.tar.gz
 Source0  : https://pypi.python.org/packages/93/bd/8a90834a287e0c1682eab8e20ada672e4f4cf7d5b99f2833ddbf31ed1a6d/py-1.4.32.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
@@ -36,7 +36,7 @@ python components for the py package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487782813
+export SOURCE_DATE_EPOCH=1487782916
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -46,7 +46,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test --verbose ||:
 %install
-export SOURCE_DATE_EPOCH=1487782813
+export SOURCE_DATE_EPOCH=1487782916
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
