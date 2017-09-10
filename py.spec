@@ -4,12 +4,13 @@
 #
 Name     : py
 Version  : 1.4.34
-Release  : 28
+Release  : 29
 URL      : http://pypi.debian.net/py/py-1.4.34.tar.gz
 Source0  : http://pypi.debian.net/py/py-1.4.34.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
 Group    : Development/Tools
 License  : MIT
+Requires: py-legacypython
 Requires: py-python
 BuildRequires : pbr
 BuildRequires : pip
@@ -23,9 +24,18 @@ BuildRequires : setuptools
 .. image:: https://img.shields.io/travis/pytest-dev/py.svg
 :target: https://travis-ci.org/pytest-dev/py
 
+%package legacypython
+Summary: legacypython components for the py package.
+Group: Default
+
+%description legacypython
+legacypython components for the py package.
+
+
 %package python
 Summary: python components for the py package.
 Group: Default
+Requires: py-legacypython
 
 %description python
 python components for the py package.
@@ -39,7 +49,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1496603557
+export SOURCE_DATE_EPOCH=1505056530
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -49,7 +59,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test --verbose ||:
 %install
-export SOURCE_DATE_EPOCH=1496603557
+export SOURCE_DATE_EPOCH=1505056530
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -60,7 +70,10 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
