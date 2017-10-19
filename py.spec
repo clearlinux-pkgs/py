@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.4.34
-Release  : 33
+Release  : 34
 URL      : http://pypi.debian.net/py/py-1.4.34.tar.gz
 Source0  : http://pypi.debian.net/py/py-1.4.34.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
