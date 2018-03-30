@@ -1,3 +1,8 @@
+1.5.3 (unreleased)
+==================
+
+- fix #179: ensure we can support 'from py.error import ...'
+
 1.5.2
 =====
 
@@ -10,6 +15,10 @@
 
 1.5.0
 =====
+
+NOTE: **this release has been removed from PyPI** due to missing package
+metadata which caused a number of problems to py26 and py33 users.
+This issue was fixed in the 1.5.1 release.
 
 - python 2.6 and 3.3 are no longer supported
 - deprecate py.std and remove all internal uses
