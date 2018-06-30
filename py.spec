@@ -4,18 +4,20 @@
 #
 Name     : py
 Version  : 1.5.3
-Release  : 47
+Release  : 48
 URL      : http://pypi.debian.net/py/py-1.5.3.tar.gz
 Source0  : http://pypi.debian.net/py/py-1.5.3.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
 Group    : Development/Tools
 License  : MIT
 Requires: py-python3
+Requires: py-license
 Requires: py-python
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pytest
-
+BuildRequires : python-core
+BuildRequires : python3-core
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : setuptools-legacypython
@@ -32,6 +34,14 @@ Requires: python-core
 
 %description legacypython
 legacypython components for the py package.
+
+
+%package license
+Summary: license components for the py package.
+Group: Default
+
+%description license
+license components for the py package.
 
 
 %package python
@@ -60,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528573874
+export SOURCE_DATE_EPOCH=1530375950
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -70,8 +80,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test --verbose ||:
 %install
-export SOURCE_DATE_EPOCH=1528573874
+export SOURCE_DATE_EPOCH=1530375950
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/py
+cp LICENSE %{buildroot}/usr/share/doc/py/LICENSE
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -84,6 +96,10 @@ echo ----[ mark ]----
 %files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/py/LICENSE
 
 %files python
 %defattr(-,root,root,-)
