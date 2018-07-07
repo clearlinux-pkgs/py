@@ -2,3 +2,5 @@
 # picked up automatically. One name per line, no whitespace.
 setuptools-python
 setuptools-legacypython
+setuptools_scm
+setuptools_scm-legacypython
