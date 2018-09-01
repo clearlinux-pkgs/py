@@ -1,4 +1,6 @@
 # This file contains recursive sources that require this package
+Django
+PyJWT
 Sphinx
 astunparse
 beautifulsoup4
@@ -8,9 +10,13 @@ iso8601
 posix_ipc
 pyasn1
 pyparsing
+pysendfile
 pytest
 pyzmq
+rfc3986
 simplejson
 six
+sqlalchemy-migrate
 testscenarios
 tox
+warlock
