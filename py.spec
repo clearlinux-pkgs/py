@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.7.0
-Release  : 55
+Release  : 56
 URL      : https://files.pythonhosted.org/packages/c7/fa/eb6dd513d9eb13436e110aaeef9a1703437a8efa466ce6bb2ff1d9217ac7/py-1.7.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c7/fa/eb6dd513d9eb13436e110aaeef9a1703437a8efa466ce6bb2ff1d9217ac7/py-1.7.0.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
