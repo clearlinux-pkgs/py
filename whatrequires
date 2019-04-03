@@ -4,6 +4,8 @@ PyJWT
 Sphinx
 astunparse
 beautifulsoup4
+deprecated-Sphinx
+deprecated-warlock
 ecdsa
 enum34
 iso8601

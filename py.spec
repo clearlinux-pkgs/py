@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.8.0
-Release  : 59
+Release  : 60
 URL      : https://files.pythonhosted.org/packages/f1/5a/87ca5909f400a2de1561f1648883af74345fe96349f34f737cdfc94eba8c/py-1.8.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f1/5a/87ca5909f400a2de1561f1648883af74345fe96349f34f737cdfc94eba8c/py-1.8.0.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
@@ -13,7 +13,6 @@ License  : MIT
 Requires: py-license = %{version}-%{release}
 Requires: py-python = %{version}-%{release}
 Requires: py-python3 = %{version}-%{release}
-BuildRequires : buildreq-distutils23
 BuildRequires : buildreq-distutils3
 BuildRequires : pytest
 BuildRequires : setuptools-legacypython
@@ -24,15 +23,6 @@ BuildRequires : setuptools_scm-legacypython
 %description
 .. image:: https://img.shields.io/pypi/v/py.svg
 :target: https://pypi.org/project/py
-
-%package legacypython
-Summary: legacypython components for the py package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the py package.
-
 
 %package license
 Summary: license components for the py package.
@@ -68,9 +58,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550847689
-python2 setup.py build -b py2
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1554325069
+export MAKEFLAGS=%{?_smp_mflags}
+python3 setup.py build
 
 %check
 export http_proxy=http://127.0.0.1:9/
@@ -78,22 +68,17 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 py.test --verbose ||:
 %install
-export SOURCE_DATE_EPOCH=1550847689
+export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/py
 cp LICENSE %{buildroot}/usr/share/package-licenses/py/LICENSE
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files license
 %defattr(0644,root,root,0755)
