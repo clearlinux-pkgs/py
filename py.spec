@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.8.0
-Release  : 60
+Release  : 61
 URL      : https://files.pythonhosted.org/packages/f1/5a/87ca5909f400a2de1561f1648883af74345fe96349f34f737cdfc94eba8c/py-1.8.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/f1/5a/87ca5909f400a2de1561f1648883af74345fe96349f34f737cdfc94eba8c/py-1.8.0.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
@@ -15,10 +15,8 @@ Requires: py-python = %{version}-%{release}
 Requires: py-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pytest
-BuildRequires : setuptools-legacypython
 BuildRequires : setuptools-python
 BuildRequires : setuptools_scm
-BuildRequires : setuptools_scm-legacypython
 
 %description
 .. image:: https://img.shields.io/pypi/v/py.svg
@@ -58,7 +56,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554325069
+export SOURCE_DATE_EPOCH=1554343726
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 

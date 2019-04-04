@@ -5,6 +5,11 @@ Sphinx
 astunparse
 beautifulsoup4
 deprecated-Sphinx
+deprecated-pyasn1
+deprecated-pyparsing
+deprecated-simplejson
+deprecated-six
+deprecated-testscenarios
 deprecated-warlock
 ecdsa
 enum34
