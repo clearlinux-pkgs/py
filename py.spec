@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.8.1
-Release  : 68
+Release  : 69
 URL      : https://files.pythonhosted.org/packages/bd/8f/169d08dcac7d6e311333c96b63cbe92e7947778475e1a619b674989ba1ed/py-1.8.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bd/8f/169d08dcac7d6e311333c96b63cbe92e7947778475e1a619b674989ba1ed/py-1.8.1.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
