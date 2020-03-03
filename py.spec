@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.8.1
-Release  : 69
+Release  : 70
 URL      : https://files.pythonhosted.org/packages/bd/8f/169d08dcac7d6e311333c96b63cbe92e7947778475e1a619b674989ba1ed/py-1.8.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bd/8f/169d08dcac7d6e311333c96b63cbe92e7947778475e1a619b674989ba1ed/py-1.8.1.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
@@ -20,7 +20,39 @@ BuildRequires : setuptools_scm
 
 %description
 .. image:: https://img.shields.io/pypi/v/py.svg
-:target: https://pypi.org/project/py
+    :target: https://pypi.org/project/py
+
+.. image:: https://img.shields.io/conda/vn/conda-forge/py.svg
+    :target: https://anaconda.org/conda-forge/py
+
+.. image:: https://img.shields.io/pypi/pyversions/pytest.svg
+  :target: https://pypi.org/project/py
+
+.. image:: https://img.shields.io/travis/pytest-dev/py.svg
+   :target: https://travis-ci.org/pytest-dev/py
+
+.. image:: https://ci.appveyor.com/api/projects/status/10keglan6uqwj5al/branch/master?svg=true
+   :target: https://ci.appveyor.com/project/pytestbot/py
+
+
+**NOTE**: this library is in **maintenance mode** and should not be used in new code.
+
+The py lib is a Python development support library featuring
+the following tools and modules:
+
+* ``py.path``:  uniform local and svn path objects  -> please use pathlib/pathlib2 instead
+* ``py.apipkg``:  explicit API control and lazy-importing -> please use the standalone package instead
+* ``py.iniconfig``:  easy parsing of .ini files -> please use the standalone package instead
+* ``py.code``: dynamic code generation and introspection (deprecated, moved to ``pytest`` as a implementation detail).
+
+**NOTE**: prior to the 1.4 release this distribution used to
+contain py.test which is now its own package, see http://pytest.org
+
+For questions and more information please visit http://py.readthedocs.org
+
+Bugs and issues: https://github.com/pytest-dev/py
+
+Authors: Holger Krekel and others, 2004-2017
 
 %package license
 Summary: license components for the py package.
@@ -43,6 +75,7 @@ python components for the py package.
 Summary: python3 components for the py package.
 Group: Default
 Requires: python3-core
+Provides: pypi(py)
 
 %description python3
 python3 components for the py package.
@@ -57,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578158407
+export SOURCE_DATE_EPOCH=1583204133
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
