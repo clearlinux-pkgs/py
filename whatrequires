@@ -10,8 +10,8 @@ iso8601
 posix_ipc
 pyasn1
 pyparsing
-pysendfile
 pytest
+pytest-forked
 pyzmq
 retry
 rfc3986
@@ -19,4 +19,3 @@ simplejson
 six
 testscenarios
 tox
-warlock
