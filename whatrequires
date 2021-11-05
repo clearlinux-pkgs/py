@@ -2,9 +2,11 @@
 Django
 PyJWT
 Sphinx
+ansible
 astunparse
 beautifulsoup4
 conda
+cve-bin-tool
 ecdsa
 iso8601
 posix_ipc
