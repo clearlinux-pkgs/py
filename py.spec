@@ -4,7 +4,7 @@
 #
 Name     : py
 Version  : 1.11.0
-Release  : 87
+Release  : 88
 URL      : https://files.pythonhosted.org/packages/98/ff/fec109ceb715d2a6b4c4a85a61af3b40c723a961e8828319fbcb15b868dc/py-1.11.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/98/ff/fec109ceb715d2a6b4c4a85a61af3b40c723a961e8828319fbcb15b868dc/py-1.11.0.tar.gz
 Summary  : library with cross-python path, ini-parsing, io, code, log facilities
